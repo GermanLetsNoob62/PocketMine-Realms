@@ -2,9 +2,9 @@
 
 /*
 __PocketMine Plugin__
-name=PocketMine Realms
+name=GermanLetsNoob62 0.7.2
 description=Automatic server listing on PocketMine Realms and more features.
-version=0.1
+version=0.7.2
 author=shoghicp
 class=PMRealms
 apiversion=9
@@ -19,9 +19,9 @@ class PMRealms implements Plugin{
 	
 	public function init(){
 		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
-			"ownerName" => "",
-			"externalAddress" => "",
-			"externalPort" => "",
+			"ownerName" => "GermanLetsNoob62",
+			"externalAddress" => "89.13.234.59",
+			"externalPort" => "5555",
 		));
 		
 		$error = 0;
@@ -59,9 +59,9 @@ class PMRealms implements Plugin{
 		$this->api->asyncOperation(ASYNC_CURL_POST, array(
 			"url" => "http://peoapi.pocketmine.net/server/heartbeat",
 			"data" => array(
-				"ip" => $this->config->get("externalAddress"),
-				"port" => (int) $this->config->get("externalPort"),
-				"ownerName" => $this->config->get("ownerName"),
+				"ip" => $this->config->get("89.13.234.59"),
+				"port" => (int) $this->config->get("5555"),
+				"ownerName" => $this->config->get("GermanLetsNoob62"),
 				"name" => $this->server->name,
 				"maxNrPlayers" => $this->server->maxClients,
 				"nrPlayers" => count($this->api->player->getAll()),
